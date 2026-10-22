@@ -22,7 +22,7 @@ help: ## List targets
 setup: $(VENV)/.installed ## Create .venv and install requirements
 
 $(VENV)/.installed: requirements.txt
-	@$(PYTHON) -c 'import sys; sys.exit(0 if sys.version_info >= (3, 11) else "Python 3.11+ required")'
+	@$(PYTHON) -c 'import sys; sys.exit(0 if sys.version_info >= (3, 12) else "Python 3.12+ required")'
 	$(PYTHON) -m venv $(VENV)
 	$(BIN)/pip install -r requirements.txt
 	touch $@

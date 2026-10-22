@@ -1,13 +1,13 @@
-# Brain: data handling and models (all pins support Python 3.11)
+# Brain: data handling and models
 duckdb==2.0.0
-numpy==2.4.6
+numpy==2.5.4
 pandas==3.1.0
 pyarrow==26.0.0
 scikit-learn==1.9.1
 # xgboost-cpu skips the CUDA/NCCL libraries; it has no macOS wheels,
 # where plain xgboost is CPU-only anyway.
-xgboost-cpu==3.2.0; sys_platform != "darwin"
-xgboost==3.2.0; sys_platform == "darwin"
+xgboost-cpu==3.4.1; sys_platform != "darwin"
+xgboost==3.4.1; sys_platform == "darwin"
 matplotlib==3.11.2
 
 # Hands: Kubernetes API (cordon, eviction) and etcd state handover

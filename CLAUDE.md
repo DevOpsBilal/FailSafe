@@ -8,7 +8,7 @@ Predictive hardware maintenance pipeline.
 
 ## Engineering rules
 
-- Python 3.11+, DuckDB for raw data, pandas for small tables.
+- Python 3.12+, DuckDB for raw data, pandas for small tables.
 - Code in `src/`, tests in `tests/`, results in `results/`. Raw data never committed.
 - Reproducible: one command per stage (Makefile).
 - Every reported metric must come from a run. Never invent numbers.
