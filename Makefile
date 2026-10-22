@@ -6,6 +6,9 @@ BIN     := $(VENV)/bin
 QUARTER ?= Q1_2024
 CLUSTER ?= failsafe
 
+# Package lives in src/; stages run as `python -m failsafe.<module>`.
+export PYTHONPATH := src
+
 # Placeholder recipe for stages that are not built yet: fail loudly.
 TODO = @echo "$@: not implemented yet" >&2; exit 1
 
@@ -19,6 +22,7 @@ help: ## List targets
 setup: $(VENV)/.installed ## Create .venv and install requirements
 
 $(VENV)/.installed: requirements.txt
+	@$(PYTHON) -c 'import sys; sys.exit(0 if sys.version_info >= (3, 11) else "Python 3.11+ required")'
 	$(PYTHON) -m venv $(VENV)
 	$(BIN)/pip install -r requirements.txt
 	touch $@

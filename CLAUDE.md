@@ -8,14 +8,17 @@ Predictive hardware maintenance pipeline.
 
 ## Engineering rules
 
-- Never commit raw data files. Commit only code and small result files.
-- Keep a short `LOG.md`: what we did each session, what I learned, what's next.
+- Python 3.11+, DuckDB for raw data, pandas for small tables.
+- Code in `src/`, tests in `tests/`, results in `results/`. Raw data never committed.
+- Reproducible: one command per stage (Makefile).
+- Every reported metric must come from a run. Never invent numbers.
+- Small focused commits with clear messages. Keep `LOG.md` updated.
 
 ## Layout
 
-- `failsafe/brain/`: data loading, features, models, evaluation
-- `failsafe/costmodel/`: parametric cost comparison
-- `failsafe/hands/`: node flagging, cordon/evict, etcd state handover
+- `src/failsafe/brain/`: data loading, features, models, evaluation
+- `src/failsafe/costmodel/`: parametric cost comparison
+- `src/failsafe/hands/`: node flagging, cordon/evict, etcd state handover
 - `k8s/`: kind config and manifests (worker, PodDisruptionBudget, etcd)
 - `tests/`: pytest
 - `results/`: small committed outputs (metrics, plots)
