@@ -1,0 +1,15 @@
+# Brain: data handling and models
+numpy==2.5.4
+pandas==3.1.0
+pyarrow==26.0.0
+scikit-learn==1.9.1
+xgboost==3.4.1
+matplotlib==3.11.2
+
+# Hands: Kubernetes API (cordon, eviction) and etcd state handover
+kubernetes==37.0.1
+etcd3gw==2.7.0
+
+# Dev
+pytest==9.1.1
+ruff==0.17.1
