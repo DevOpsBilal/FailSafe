@@ -1,16 +1,10 @@
-# CLAUDE.md
+# FailSafe
 
-Instructions for every Claude session working in this repo.
+Predictive hardware maintenance pipeline.
 
-## Project: FailSafe
-
-Predict hard-drive failures from Backblaze Drive Stats SMART data.
-
-- Focus on **one drive model** at a time.
-- Use a **chronological train/test split**: train on earlier dates, test on later dates. Never shuffle randomly, because that lets the model peek at the future.
-- Measure **lead time in days**: how many days before a drive actually fails the model flags it.
-
-Later: a Kubernetes demo that safely drains a node once it has been flagged.
+- **Brain:** predict hard-drive failures from Backblaze Drive Stats SMART data. One drive model, chronological train/test split, per-drive evaluation, lead time in days. Compare a threshold rule, logistic regression, Isolation Forest and XGBoost.
+- **Cost model:** parametric. Compare disk checkpointing, in-memory checkpointing and predictive action, including detection time and the cost of false alarms.
+- **Hands:** Kubernetes (kind) demo. Cordon + Eviction API with a PodDisruptionBudget; the worker hands state over via … *(unfinished, waiting on the rest of this sentence)*
 
 ## How to work with me
 
