@@ -26,4 +26,4 @@ Predictive hardware maintenance pipeline.
 
 ## Commands
 
-`make help` lists targets. `make setup` creates `.venv` from `requirements.txt`; `make test` and `make lint` run pytest and ruff. Pipeline stages: `data` → `features` → `train` → `evaluate` → `cost`; demo: `cluster-up` → `demo` → `cluster-down`.
+`make help` lists targets. `make setup` creates `.venv` from `requirements.txt` and installs `src/failsafe` in editable mode; `make test` and `make lint` run pytest and ruff. Pipeline stages: `data` → `features` → `train` → `evaluate` → `cost`; demo: `cluster-up` → `demo` → `cluster-down`.
